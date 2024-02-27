@@ -1,0 +1,36 @@
+version: '3'
+services:
+  front:
+    build:
+      context: "./FE/narou_pjt"
+      dockerfile: Dockerfile
+    working_dir: "/app"
+    ports:
+      - 3000:3000
+  back:
+    build:
+      context: "./BE/narou_pjt"
+      dockerfile: Dockerfile 
+    ports:
+      - "18080:8080"
+      # - "8085:8085" 
+    networks:
+      - deploy # 컨테이너를 연결할 네트워크
+
+networks:
+  deploy: # 네트워크 정의
+    external: true
+
+# version: '3'
+# services:
+#   app:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     restart: always
+#     ports:
+#       - 80:80  
+
+# networks:
+#   mynetwork:
+#     driver: bridge
