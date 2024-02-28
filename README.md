@@ -1,70 +1,184 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# NAROU 🧳
+다른 사람들의 여행 경로를 한눈에 비교하고 싶나요? 🙋‍♀️
+<br> 
+나만의 여행을 위한 효율적인 루트를 계획하고 실시간으로 공유 해 보세요! ✈
 
-## Available Scripts
+### 목차
+1. [프로젝트 기간](#1-프로젝트-기간)
+2. [사용한 기술 스택](#2-사용한-기술-스택)
+3. [팀원 소개](#3-팀원-소개)
+4. [폴더 구조](#4-폴더-구조)
+5. [설계](#5-설계)
+6. [주요 기능 설명](#6-주요-기능-설명)
+7. [서비스 화면](#7-서비스-화면)
 
-In the project directory, you can run:
+----
 
-### `npm start`
+### 1. 프로젝트 기간
+  - 2024.01.06 ~ 2024.02.16 (6주)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. 사용한 기술 스택
+  * React
+  * node.js
+  * zustand
+  * styled-component
+  * axios
+  * mui material
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 3. 팀원 소개
+<table width="100%">
+  <tr>
+    <td width="33%" align="center">
+      <img src="src/img/nyk.jpg" width="100%"/>
+      <b><a href="https://github.com/baloo365">나유경</a></b> 
+    </td>
+    <td width="33%" align="center">
+      <img src="src/img/lgh.jpg" width="100%"/>
+      <b><a href="https://github.com/goldbutnew">이금현</a></b> 
+    </td>
+    <td width="33%" align="center">
+      <img src="src/img/lwj.png" width="100%"/>
+      <b><a href="https://github.com/uuniversey">이우주</a></b> 
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" align="center">
+      지도 API 관련 로직<br>
+      비교 페이지<br>
+      게시물 무한 스크롤 구현
+    </td>
+    <td width="33%" align="center">
+      게시글, 코멘트 CRUD<br>
+      실시간 채팅 기능<br>
+      UI/UX
+    </td>
+    <td width="33%" align="center">
+      git 관리<br>
+      회원 관련 기능<br>
+      검색 및 필터
+    </td>
+  </tr>
+</table>
 
-### `npm test`
+### 4. 폴더 구조
+```
+  .
+  ├── node_modules
+  ├── public
+  └── src
+      ├── assets
+          └── image
+      ├── components
+      ├── pages
+      ├── router
+      └── store
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 5. 설계
+* Figma
+  <table>
+    <tr>
+      <td>
+        <img src="src/img/figma.png" width="100%" />
+      </td>
+    </tr>
+  </table>
 
-### `npm run build`
+* FlowChart
+  <table>
+    <tr>
+      <td>
+        <img src="src/img/flowchart.png" width="100%"/>
+      </td>
+    </tr>
+  </table>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 6. 주요 기능 설명
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  - 회원 관리
+    - 멤버 회원가입/탈퇴, 중복 아이디 체크, 토큰 활용 인증, 인증코드 확인
+    - 유저 닉네임 및 소개 조회/수정, 프로필 사진 등록/수정, 팔로우/팔로잉, 팔로우/팔로잉 목록 확인
+    - 스크랩한 게시글 조회
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  - 게시글 검색 및 필터 기능
+    - 작성자, 제목으로 게시글 검색
+    - 최신순, 인기순으로 게시글 정렬
+    - 필터 조건을 설정하여 필터 검색
+    - 사진 모드와 경로 모드로 게시글 조회
+    - 무한스크롤
 
-### `npm run eject`
+  - 게시글
+    - 좋아요, 스크랩, 댓글
+    - 태그 지정, 태그 기반 검색
+    - 피드별 장소, 사진 등록(등록 시 Cropper로 줌 인/아웃 가능)
+    - 피드 기반 경로 보여주기
+    - 썸네일 등록
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  - 비교
+    - 두 게시글을 가져와 맵 상에서 경로 비교
+    - 경로의 상세 정보 확인
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 7. 서비스 화면
+* 메인페이지
+  <table>
+    <tr>
+      <td>
+        <img src="src/img/main.gif" width="100%" />
+      </td>
+    </tr>
+  </table>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* 무한스크롤
+  <table>
+    <tr>
+      <td>
+        <img src="src/img/infinite_scroll.gif" width="100%" />
+      </td>
+    </tr>
+  </table>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* 검색
+  <table>
+    <tr>
+      <td>
+        <img src="src/img/search.gif" width="100%" />
+      </td>
+    </tr>
+  </table>
 
-## Learn More
+* 게시글 작성
+  <table>
+    <tr>
+      <td>
+        <img src="src/img/create.gif" width="100%" />
+      </td>
+    </tr>
+  </table>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* 프로필
+  <table>
+    <tr>
+      <td>
+        <img src="src/img/profile.gif" width="100%" />
+      </td>
+    </tr>
+  </table>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* 스크랩
+  <table>
+    <tr>
+      <td>
+        <img src="src/img/scrap.gif" width="100%" />
+      </td>
+    </tr>
+  </table>
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* 비교
+  <table>
+    <tr>
+      <td>
+        <img src="src/img/compare.gif" width="100%" />
+      </td>
+    </tr>
+  </table>
